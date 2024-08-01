@@ -54,6 +54,7 @@ void SYS_Init(void)
     SYS->USBPHY |= SYS_USBPHY_HSUSBACT_Msk;
     /* Enable IP clock */
     CLK->AHBCLK |= CLK_AHBCLK_HSUSBDCKEN_Msk;   /* USBD20 */
+    SYS_LockReg();
 }
 
 extern uint8_t bUsbDataReady;
